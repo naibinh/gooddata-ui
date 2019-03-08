@@ -47,7 +47,9 @@ This article describes the options for configuring a chart.
     separators: {
         thousand: ',',
         decimal: '.'
-    }
+    },
+    stackMeasures: true // boolean,
+    stackMeasuresToPercent: true // boolean
 }
 ```
 
@@ -293,6 +295,31 @@ import { Visualization } from '@gooddata/react-components';
         grid: {
             enabled: false
         }
+    }}
+/>
+```
+
+## Configure optional stacking
+
+* This setting is only applied to Column, Bar, Dual Axis and Area chart
+* To see total contribution of each metric, enable the `config.stackMeasures`
+* To see percentage contribution of each metric, enable the `config.stackMeasuresToPercent`
+* `stackMeasuresToPercent` always overwrites `stackMeasures` if both presented
+* For area chart, `config.stackMeasures` is enabled by default
+* For bar/column/dual axis chart, this setting is ignored if number of measure is one 
+* For dual axis chart, `config.stackMeasuresToPercent` is only applied to left axis 
+
+
+```javascript
+import { Visualization } from '@gooddata/react-components';
+
+// Example of embedding a visualization with settings for optional stacking
+<Visualization
+    projectId=<project-id>
+    identifier=<visualization-id>
+    config={{
+        stackMeasures: false,
+        stackMeasuresToPercent: true
     }}
 />
 ```
