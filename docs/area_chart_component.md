@@ -68,9 +68,9 @@ const attribute = {
 | Name | Required? | Type | Description |
 | :--- | :--- | :--- | :--- |
 | projectId | true | string | The project ID |
-| measures | true | [Measure[]](afm.md#measure) | An array of measure definitions. Only first measure is used if viewBy is with two attributes |
-| viewBy | false | [Attribute[]](afm.md#attribute) | Single or array of maximum-two attribute definitions. If two, second attribute slices measure horizontally, and areas are always overlapped whatever stacking setting is.  |
-| stackBy | false | [Attribute](afm.md#attribute) | Attribute definition. It is ignored if viewBy is with two attributes |
+| measures | true | [Measure[]](afm.md#measure) | An array of measure definitions. If `viewBy` has two attributes, only the first measure is used. |
+| viewBy | false | [Attribute[]](afm.md#attribute) | An attribute definition or an array of two attribute definitions. If set to a two-attribute array, the second attribute slices the measure horizontally, and the areas are always overlapped regardless of what `stackBy` is set to. |
+| stackBy | false | [Attribute](afm.md#attribute) | An attribute definition. `stackBy` is ignored if `viewBy` has two attributes. |
 | filters | false | [Filter[]](filter_visual_components.md) | An array of filter definitions |
 | sortBy | false | [SortItem[]](result_specification.md#sorting) | An array of sort definitions |
 | config | false | [ChartConfig](chart_config.md) | The chart configuration object |

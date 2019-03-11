@@ -48,7 +48,7 @@ This article describes the options for configuring a chart.
         thousand: ',',
         decimal: '.'
     },
-    stackMeasures: true // boolean,
+    stackMeasures: true, // boolean
     stackMeasuresToPercent: true // boolean
 }
 ```
@@ -299,15 +299,20 @@ import { Visualization } from '@gooddata/react-components';
 />
 ```
 
-## Configure Stacking
+## Configure stacking
 
-* This setting is only applied to Column, Bar, Dual Axis and Area chart
-* To see total contribution of each metric, enable the `config.stackMeasures`
-* To see percentage contribution of each metric, enable the `config.stackMeasuresToPercent`
-* `stackMeasuresToPercent` always overwrites `stackMeasures` if both presented
-* For area chart, `config.stackMeasures` is enabled by default
-* For bar/column/dual axis chart, this setting is ignored if number of measure is one 
-* For dual axis chart, `config.stackMeasuresToPercent` is only applied to left axis 
+* You can configure stacking for the following types of charts:
+    * [Area charts](area_chart_component.md)
+    * [Bar charts](bar_chart_component.md)
+    * [Column charts](column_chart_component.md)
+    * Charts with the [secondary axis](#Configure-axes)
+* To display the total contribution of each metric, enable `config.stackMeasures`.
+    * For area charts, `config.stackMeasures` is enabled by default.
+    * For bar charts, column charts, and charts with the secondary axis, `config.stackMeasures` is ignored when the chart has only one measure.
+* To display the percentage contribution of each metric, enable `config.stackMeasuresToPercent`.
+    * If both `config.stackMeasuresToPercent` and `config.stackMeasures` are present, `config.stackMeasuresToPercent` overwrites `config.stackMeasures`.
+    * For charts with the secondary axis, `config.stackMeasuresToPercent` is applied only to the left axis.
+
 
 
 ```javascript
