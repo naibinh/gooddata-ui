@@ -299,7 +299,7 @@ import { Visualization } from '@gooddata/react-components';
 />
 ```
 
-## Configure optional stacking
+## Configure Stacking
 
 * This setting is only applied to Column, Bar, Dual Axis and Area chart
 * To see total contribution of each metric, enable the `config.stackMeasures`
